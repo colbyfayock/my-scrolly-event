@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import Head from 'next/head'
 
 import Layout from '@components/Layout';
@@ -8,6 +9,10 @@ import Button from '@components/Button';
 import styles from '@styles/Home.module.scss'
 
 export default function Home() {
+  const myRef = useRef();
+  useEffect(() => {
+    console.log('myRef', myRef.current);
+  }, [])
   return (
     <Layout>
       <Head>
@@ -112,7 +117,7 @@ export default function Home() {
 
       <Section backgroundColor="secondary">
         <Container>
-          <h2 className={styles.heading}>
+          <h2 ref={myRef} className={styles.heading}>
             Have you scrolled down here yet? 🧐
           </h2>
 
