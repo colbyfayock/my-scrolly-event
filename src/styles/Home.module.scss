@@ -61,3 +61,33 @@
   }
 
 }
+
+.rocket {
+  display: inline-block;
+}
+
+.animateRocket {
+  animation-duration: 5s;
+  animation-name: animate-rocket;
+}
+
+@keyframes animate-rocket {
+  0% {
+    transform: scale(1) rotate(10deg);
+  }
+  5% {
+    transform: scale(1.25) rotate(-15deg);
+  }
+  10% {
+    transform: scale(1.5) rotate(5deg);
+  }
+  15% {
+    transform: scale(1.75) rotate(-10deg);
+  }
+  20% {
+    transform: scale(2) rotate(0);
+  }
+  100% {
+    transform: scale(20) translate3D(100vw, -100vh, 0) rotate(0);
+  }
+}

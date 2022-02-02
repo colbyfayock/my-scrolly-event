@@ -11,6 +11,7 @@ import styles from '@styles/Home.module.scss'
 
 export default function Home() {
   const { ref: myRef, inView: myElementIsVisible } = useInView();
+  const { ref: magicSectionRef, inView: magicSectionIsVisible } = useInView();
   return (
     <Layout>
       <Head>
@@ -105,11 +106,15 @@ export default function Home() {
 
       <Section backgroundColor="primary">
         <Container>
-          <h2 className={styles.heading}>
+          <h2 ref={magicSectionRef} className={styles.heading}>
             Magic 🪄
           </h2>
 
-          <p>🚀</p>
+          <p>
+            <span className={`${styles.rocket} ${magicSectionIsVisible ? styles.animateRocket : ''}`}>
+              🚀
+            </span>
+          </p>
         </Container>
       </Section>
 
