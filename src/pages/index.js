@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Head from 'next/head'
 
 import Layout from '@components/Layout';
@@ -9,12 +9,12 @@ import Button from '@components/Button';
 import styles from '@styles/Home.module.scss'
 
 export default function Home() {
+  const [myElementIsVisible, updateMyElementIsVisible] = useState();
   const myRef = useRef();
   useEffect(() => {
     const observer = new IntersectionObserver((entries, observer) => {
       const entry = entries[0];
-      console.log('entry', entry);
-      console.log('entry.isIntersecting', entry.isIntersecting);
+      updateMyElementIsVisible(entry.isIntersecting);
     });
     observer.observe(myRef.current);
   }, []);
@@ -126,7 +126,7 @@ export default function Home() {
             Have you scrolled down here yet? 🧐
           </h2>
 
-          <p>IDK 🤷‍♂️</p>
+          <p>{ myElementIsVisible ? 'Yes! 🥳' : 'No 🙈' }</p>
         </Container>
       </Section>
 
