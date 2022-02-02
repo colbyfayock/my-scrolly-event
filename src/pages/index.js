@@ -11,8 +11,13 @@ import styles from '@styles/Home.module.scss'
 export default function Home() {
   const myRef = useRef();
   useEffect(() => {
-    console.log('myRef', myRef.current);
-  }, [])
+    const observer = new IntersectionObserver((entries, observer) => {
+      const entry = entries[0];
+      console.log('entry', entry);
+      console.log('entry.isIntersecting', entry.isIntersecting);
+    });
+    observer.observe(myRef.current);
+  }, []);
   return (
     <Layout>
       <Head>
