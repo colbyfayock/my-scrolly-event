@@ -1,0 +1,13 @@
+@import "@styles/settings/__settings";
+
+.container {
+
+  max-width: 1024px;
+  padding: 0 2rem;
+  margin: 0 auto;
+
+  @media (max-width: 640px) {
+    padding: 0 1rem;
+  }
+
+}

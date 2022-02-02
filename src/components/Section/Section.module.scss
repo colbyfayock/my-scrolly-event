@@ -1,0 +1,29 @@
+@import "@styles/settings/__settings";
+
+.section {
+
+  padding: 3rem 0;
+  margin: 3rem 0;
+
+  &[data-background-color="primary"],
+  &[data-background-color="secondary"] {
+
+    color: white;
+    margin: 0;
+
+    a {
+      color: inherit;
+    }
+
+  }
+
+  &[data-background-color="primary"] {
+    background-color: $color-primary;
+  }
+
+  &[data-background-color="secondary"] {
+    background-color: $color-secondary;
+  }
+
+}
+

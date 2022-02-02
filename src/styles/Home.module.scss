@@ -1,0 +1,63 @@
+@import "@styles/settings/__settings";
+
+.contianerDark {
+  color: white;
+  background-color: $color-brand-deep-blue;
+}
+
+.title {
+
+  color: $color-brand-purple;
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin: 0 0 4rem;
+
+  @media (max-width: 720px) {
+    font-size: 3rem;
+  }
+
+}
+
+.subtitle {
+
+  font-size: 2rem;
+  margin: -3rem 0 0;
+
+  @media (max-width: 720px) {
+    font-size: 1.5rem;
+  }
+
+}
+
+.heading {
+
+  font-size: 3.2rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 2rem;
+  }
+
+}
+
+.posts {
+
+  font-size: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+
+    margin-bottom: .2em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
